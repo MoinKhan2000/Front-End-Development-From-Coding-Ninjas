@@ -1,0 +1,85 @@
+#div1 {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background-color: aqua;
+
+    /* First way for multiple animations */
+    /* animation: multipleAnim .8s infinite alternate; */
+
+
+    /* Second way */
+    animation-name: changeShape, rotate, reduceSize;
+    animation-duration: 1s, 1s, 1s;
+    animation-iteration-count: infinite, infinite, infinite;
+    animation-direction: alternate, alternate, alternate;
+
+}
+
+@keyframes changeShape {
+    0% {
+        border-radius: 0%;
+
+    }
+
+    25% {
+        border-radius: 12.5%;
+    }
+
+    50% {
+        border-radius: 25%;
+    }
+
+    100% {
+        border-radius: 50%;
+
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 350deg;
+    }
+}
+
+@keyframes reduceSize {
+    from {
+        width: 200px;
+        height: 200px;
+    }
+
+    to {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@keyframes multipleAnim {
+    0% {
+        border-radius: 0%;
+        height: 200px;
+        width: 200px;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        border-radius: 12.5%;
+    }
+
+    50% {
+        border-radius: 25%;
+    }
+
+    100% {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        transform: rotate(360deg);
+    }
+}

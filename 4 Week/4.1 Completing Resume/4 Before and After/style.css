@@ -1,0 +1,46 @@
+p::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.styled-first-letter::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+p::before {
+    content: '';
+    background: url('https://media.licdn.com/dms/image/D5603AQG6gLFbnRpUAQ/profile-displayphoto-shrink_800_800/0/1689514045469?e=2147483647&v=beta&t=uvVDEZRrBMTF90ZVOCCYx68ZslHV5-zQrwIQrCyiAjI') center center/cover;
+    background-color: lightgrey;
+    display: inline-block;
+    height: 20px;
+    left: 0px;
+    position: relative;
+    border-radius: 50%;
+    width: 20px;
+}
+
+ul {
+    list-style: none;
+
+}
+
+ul li::before {
+    content: '╫';
+}
+
+ul li::after {
+    content: '!';
+}
+
+p::first-line {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+p {
+    font-size: 13px;
+}

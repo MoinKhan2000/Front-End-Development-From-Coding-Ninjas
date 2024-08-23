@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ababab;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    background-color: whitesmoke;
+    width: 800px;
+    height: 400px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#container div {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(77, 59, 237);
+}
+
+#box2 {
+    flex-grow: 2;
+}

@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100px;
+    height: 100px;
+    /* background: linear-gradient(to left, rgba(25, 25, 230, 0.788), rgb(190, 97, 97), red); */
+    background: repeating-linear-gradient(red, blue 30px);
+    background-image: radial-gradient(#5e4eff, white, rgb(132 132 255));
+    border-radius: 50%;
+    border: 2px solid transparent;
+}

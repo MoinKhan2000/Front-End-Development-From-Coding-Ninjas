@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<style>
+    #header {
+        width: 100%;
+        height: 100px;
+        background-color: #04f2f2;
+        justify-content: baseline;
+        text-align: center;
+        padding-top: 1%;
+        margin: 0;
+    }
+
+    body {
+        background-color: #00ffff;
+        margin: 0px;
+    }
+
+    .blog-list {
+        list-style: none;
+        margin: 40;
+        padding: 40;
+        background-color: #f0f8ff;
+    }
+
+    .blog-post {
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .blog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .blog-title {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .blog-date {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .blog-content {
+        margin: 0;
+        line-height: 1.5;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <h1>My Blogs</h1>
+    </div>
+    <ul class="blog-list"></ul>
+    <script>
+        const blogData = [
+            {
+                title: 'First Blog Post',
+                date: 'January 1, 2022',
+                content: 'this is content of the first blog page.'
+            },
+            {
+                title: 'Second Blog Post',
+                date: 'February 1, 2022',
+                content: 'This is the content of the second blog post.'
+            },
+            {
+                title: 'Third Blog Post',
+                date: 'March 1, 2022',
+                content: 'This is the content of the third blog post.'
+            }
+        ];
+
+        function addBlog(blog) {
+            // Create elements
+            let blogPost = document.createElement('div');
+            blogPost.classList.add('blog-post');
+
+            let blogHeader = document.createElement('div');
+            blogHeader.classList.add('blog-header');
+
+            let titleElement = document.createElement('h2');
+            titleElement.classList.add('blog-title');
+            titleElement.textContent = blog.title;
+
+            let dateElement = document.createElement('p');
+            dateElement.classList.add('blog-date');
+            dateElement.textContent = blog.date;
+
+            let contentElement = document.createElement('p');
+            contentElement.classList.add('blog-content');
+            contentElement.textContent = blog.content;
+
+            // Append elements
+            blogHeader.appendChild(titleElement);
+            blogHeader.appendChild(dateElement);
+            blogPost.appendChild(blogHeader);
+            blogPost.appendChild(contentElement);
+
+            // Append blog post to blog list
+            let blogList = document.querySelector('.blog-list');
+            blogList.appendChild(blogPost);
+        }
+
+        blogData.forEach(blog => addBlog(blog));
+
+    </script>
+</body>
+
+</html>

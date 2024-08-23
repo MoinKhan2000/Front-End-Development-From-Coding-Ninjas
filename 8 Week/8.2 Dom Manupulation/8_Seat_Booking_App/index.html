@@ -1,0 +1,190 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    </style>
+</head>
+
+<body>
+
+    <section id="section">
+        <div class="container">
+            <!-- leftCont -->
+            <div class="leftCont">
+                <div class="leftMainCont">
+                    <div class="legendContainer">
+                        <ul>
+                            <li>
+                                <div class="seat legend"></div>
+                                <small>Available</small>
+                            </li>
+                            <li>
+                                <div class="seat legend selected"></div>
+                                <small>Selected</small>
+                            </li>
+                            <li>
+                                <div class="seat legend occupied"></div>
+                                <small>Occupied</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- seat Container -->
+                    <div class="mainSeatCont">
+                        <div class="screen">
+                            <small>SCREEN</small>
+                        </div>
+                        <div class="seatCont" id="seatCont">
+                            <div class="seatRowCont1 seatRowCont">
+                                <div class="row">
+                                    <div class="seat">1</div>
+                                    <div class="seat occupied">2</div>
+                                    <div class="seat">3</div>
+                                    <div class="seat">4</div>
+                                    <div class="seat">5</div>
+                                    <div class="seat">6</div>
+                                    <div class="seat">7</div>
+                                    <div class="seat">8</div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat">9</div>
+                                    <div class="seat occupied">10</div>
+                                    <div class="seat">11</div>
+                                    <div class="seat">12</div>
+                                    <div class="seat">13</div>
+                                    <div class="seat">14</div>
+                                    <div class="seat">15</div>
+                                    <div class="seat">16</div>
+                                </div>
+                            </div>
+                            <div class="seatRowCont2 seatRowCont">
+                                <div class="row">
+                                    <div class="seat">17</div>
+                                    <div class="seat occupied">18</div>
+                                    <div class="seat">19</div>
+                                    <div class="seat">20</div>
+                                    <div class="seat">21</div>
+                                    <div class="seat">22</div>
+                                    <div class="seat">23</div>
+                                    <div class="seat">24</div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat">25</div>
+                                    <div class="seat occupied">26</div>
+                                    <div class="seat">27</div>
+                                    <div class="seat">28</div>
+                                    <div class="seat">29</div>
+                                    <div class="seat">30</div>
+                                    <div class="seat">31</div>
+                                    <div class="seat">32</div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat">33</div>
+                                    <div class="seat occupied">34</div>
+                                    <div class="seat">35</div>
+                                    <div class="seat">36</div>
+                                    <div class="seat">37</div>
+                                    <div class="seat">38</div>
+                                    <div class="seat">39</div>
+                                    <div class="seat">40</div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat">41</div>
+                                    <div class="seat occupied">42</div>
+                                    <div class="seat">43</div>
+                                    <div class="seat">44</div>
+                                    <div class="seat">45</div>
+                                    <div class="seat">46</div>
+                                    <div class="seat">47</div>
+                                    <div class="seat">48</div>
+                                </div>
+                            </div>
+                            <div class="seatRowCont3 seatRowCont">
+                                <div class="row">
+                                    <div class="seat">49</div>
+                                    <div class="seat occupied">50</div>
+                                    <div class="seat">51</div>
+                                    <div class="seat">52</div>
+                                    <div class="seat">53</div>
+                                    <div class="seat">54</div>
+                                    <div class="seat">55</div>
+                                    <div class="seat">56</div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat">57</div>
+                                    <div class="seat occupied">58</div>
+                                    <div class="seat">59</div>
+                                    <div class="seat">60</div>
+                                    <div class="seat">61</div>
+                                    <div class="seat">62</div>
+                                    <div class="seat">63</div>
+                                    <div class="seat">64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Cont -->
+            <div class="rightCont">
+                <div class="confirmCont">
+                    <div class="rightTopCont">
+                        <!-- moviename -->
+
+                        <div class="movieInfo">
+                            <div class="selectMovie">
+                                <label>
+                                    <p>Select Your Movie</p>
+                                    <select id="selectMovie"></select>
+                                </label>
+                            </div>
+                            <div class="movieName">
+                                <p>MOVIE NAME</p>
+                                <h1 id="movieName">flash</h1>
+                            </div>
+                            <div class="moviePrice">
+                                <p>MOVIE PRICE</p>
+                                <h1 id="moviePrice">$ 7</h1>
+                            </div>
+                            <div class="dateCont">
+                                <p>Date</p>
+                                <h2 class="date">22 June,2023</h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightBottomCont">
+                        <div class="selectedSeatCont">
+                            <p>SELECTED SEATS</p>
+                            <div class="selectedSeatsHolder" id="selectedSeatsHolder">
+                                <span class="noSelected">No Seat Selected</span>
+                            </div>
+                        </div>
+                        <!-- Seat number and price -->
+
+                        <div class="numberOfSeatsCont">
+                            <div class="numberOfSeatEl">
+                                <p><span id="numberOfSeat">0</span> Seats(s)</p>
+                            </div>
+                            <div class="priceCont">
+                                <p id="totalPrice">$ 0</p>
+                            </div>
+                        </div>
+                        <!-- button Cont -->
+
+                        <div class="buttonCont">
+                            <div class="cancelBtn">
+                                <button id="cancelBtn">Cancel</button>
+                            </div>
+                            <div class="proceedBtnEl">
+                                <button id="continueBtn">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

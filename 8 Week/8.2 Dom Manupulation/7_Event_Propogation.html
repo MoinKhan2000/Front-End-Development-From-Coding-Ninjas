@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Demo</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        #outer,
+        #middle,
+        #inner {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #outer {
+            background-color: lightblue;
+        }
+
+        #middle {
+            background-color: lightgreen;
+        }
+
+        #inner {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="middle">
+            <div id="inner">
+                <button id="btn">Click Me!</button>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        document.getElementById("outer").addEventListener("click", function () {
+            console.log("Outer div clicked!");
+        });
+
+        document.getElementById("middle").addEventListener("click", function () {
+            console.log("Middle div clicked!");
+        });
+
+        document.getElementById("inner").addEventListener("click", function () {
+            console.log("Inner div clicked!");
+        });
+
+        document.getElementById("btn").addEventListener("click", function (event) {
+            event.stopPropagation();
+            console.log("Button clicked!");
+        });
+    </script>
+
+</body>
+
+</html>

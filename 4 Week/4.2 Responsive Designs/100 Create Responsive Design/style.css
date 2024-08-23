@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#main div {
+    width: 32%;
+    height: 300px;
+    margin: 0.44%;
+}
+
+#div1 {
+    background-color: #ff8989;
+}
+
+#div2 {
+    background-color: #88f7ce;
+}
+
+#div3 {
+    background-color: #e29df2;
+}
+
+@media screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+    }
+
+    #main div {
+        width: 100% !important;
+    }
+}

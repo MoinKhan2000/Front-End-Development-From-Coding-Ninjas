@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightcyan;
+}
+
+.box {
+    display: flex;
+    animation: changeShape 1s ease-in infinite;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: auto;
+    text-align: center;
+}
+
+h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-90px, 5%);
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.box1,
+.box2 {
+    height: 300px;
+    width: 180px;
+    transform: rotate(-45deg);
+    position: relative;
+}
+
+.box1 {
+    border-top-left-radius: 48%;
+    position: relative;
+    border-top-right-radius: 50%;
+    background: linear-gradient(45deg, red, black);
+    transform: rotate(-45deg);
+    box-shadow: -3px -2px 19px #bababa;
+    top: -3px;
+    left: -3px;
+}
+
+.box2 {
+    border-top-left-radius: 51%;
+    border-top-right-radius: 50%;
+    position: relative;
+    z-index: 2;
+    transform: translate(-95.5px) rotate(45deg);
+    background: linear-gradient(-45deg, red, black);
+    top: -2px;
+    box-shadow: 5px 3px 4px #ababab, inset -2px 0px 1px whitesmoke;
+}
+
+@keyframes changeShape {
+    0% {
+        scale: 1;
+    }
+
+    40% {
+        scale: 0.8;
+    }
+
+    60% {
+        scale: 1;
+    }
+
+    70% {
+        scale: 0.8;
+    }
+
+    100% {
+        scale: 1;
+    }
+
+}
+
+/* 
+@keyframes changeShape {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 0.8;
+    }
+
+    from {
+        scale: 1
+    }
+
+    to {
+        scale: 0.8;
+    }
+} */

@@ -1,0 +1,312 @@
+body {
+    margin: 0px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+/* Body Header */
+
+#body-header {
+    height: 65vh;
+    opacity: 0.8;
+    background-image: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000020_1549743985_macbook_mouse.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 1.2rem;
+}
+
+/* Horizontal Lists */
+
+.horizontal-list {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.horizontal-list li {
+    display: inline-block;
+    margin: 0px 8px 8px 0px;
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+
+.horizontal-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu li a {
+    transition: color 0.5s, border-bottom 4s;
+}
+
+.nav-menu li a:hover {
+    color: lightgrey;
+    border-bottom: 1px solid black;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Name and Social Icons*/
+
+#name-social-container {
+    margin-top: 20vh;
+}
+
+#my-name {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+
+.social-icons li a i {
+    /*color: red;*/
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 50%;
+}
+
+
+.social-icons li a i:hover {
+    box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
+
+/*About Section*/
+
+#about {
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+#my-image {
+    height: 12rem;
+    width: 12rem;
+    margin: auto;
+    margin-top: -17vh;
+}
+
+#my-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 1px 1px 10px 2px lightgrey;
+}
+
+
+#about-para {
+    padding: 10px;
+    width: 70%;
+    text-align: justify;
+    color: grey;
+    line-height: 28px;
+    font-size: 1.1rem;
+    margin: auto;
+}
+
+.text-highlight {
+    color: #2857a4;
+    font-weight: 600;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 98.5vw;
+    background-color: hsl(0deg 0% 93.73%);
+}
+
+#second {
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.capsule {
+    font-size: 18px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: start;
+    border: 2px solid black;
+    border-radius: 20ex;
+    min-width: 130px;
+    flex-wrap: wrap;
+}
+
+#portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#second-portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+#second-portfolio img {
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+
+}
+
+#second-portfolio :hover {
+    box-shadow: 9px 7px 18px 0px #ababab;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: linear-gradient(90deg, #2857a4, #403065);
+    width: 100%;
+    flex-direction: column;
+}
+
+#contact h1 {
+    color: white;
+}
+
+#contact>div {
+    display: flex;
+}
+
+#contact #leftContact,
+#leftContact form {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+#contact form input,
+#contact form textarea {
+    min-width: 50%;
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    outline: none;
+    margin: 5px
+}
+
+#btn {
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid white;
+    margin: 20px
+}
+
+#contact #rightContact {
+    flex: 1
+}
+
+#rightContact h5 {
+    font-size: 20px;
+    color: white;
+}
+
+#rightContact p {
+    font-size: 15px;
+    max-width: 80%;
+    color: white;
+}
+
+#experience {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.timeline {
+    width: 75%;
+    border: 2px solid black;
+
+}
+
+.timeline-box {
+    position: relative;
+    width: 45%;
+    min-height: 150px;
+    margin: 5px;
+    border: 2px solid red;
+}
+
+.timeline-box:nth-child(even) {
+    float: left;
+    clear: both
+}
+
+.timeline-box:nth-child(odd) {
+    float: right;
+    clear: both;
+}
+
+.timeline-box:nth-child(odd)::before {
+    content: "";
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #ababab;
+    position: absolute;
+    top: 50%;
+    left: -11%;
+}
+
+.timeline-box:nth-child(even)::after {
+    content: "";
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #ababab;
+    position: absolute;
+    top: 50%;
+    right: -11%;
+}
+
+#timeline-divider {
+    position: absolute;
+    height: 63%;
+    border: 2px dashed #0096fa6b;
+    top: 27%;
+    width: 0;
+}
+
+#timeline-traveller {
+    position: sticky;
+    top: 10%;
+    rotate: 180deg;
+    left: 2%;
+}
+
+#timeline-traveller i {
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}

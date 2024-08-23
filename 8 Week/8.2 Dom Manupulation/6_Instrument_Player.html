@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Drum Kit</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            text-align: center;
+            font-family: 'Arvo', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 3rem;
+            margin-top: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .set {
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+        }
+
+        .drum {
+            border: none;
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 2rem;
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .drum:hover {
+            background-color: #ff4136;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Drum Kit</h1>
+    <div class="set">
+        <button class="drum" data-key="w">w</button>
+        <button class="drum" data-key="a">a</button>
+        <button class="drum" data-key="s">s</button>
+        <button class="drum" data-key="d">d</button>
+        <button class="drum" data-key="j">j</button>
+        <button class="drum" data-key="k">k</button>
+        <button class="drum" data-key="l">l</button>
+    </div>
+
+    <script>
+        // Add keypress event listener to the document
+        document.addEventListener('keypress', function (event) {
+            // Get the key that was pressed
+            const key = event.key.toLowerCase();
+
+            // Get the corresponding button element based on the key pressed
+            const button = document.querySelector(`button[data-key="${key}"]`);
+
+            // If the button exists, trigger its click event
+            if (button) {
+                button.click();
+            }
+        });
+
+        // Sound URLs
+        const sounds = {
+            w: "https://files.codingninjas.in/tom-1-28537.mp3?_ga=2.177296674.62765546.1710869811-1212036775.1686138339",
+            a: "https://files.codingninjas.in/tom-2-28541.mp3?_ga=2.177296674.62765546.1710869811-1212036775.1686138339",
+            s: "https://files.codingninjas.in/tom-3-28542.mp3?_ga=2.176690466.62765546.1710869811-1212036775.1686138339",
+            d: "https://files.codingninjas.in/tom-4-28543.mp3?_ga=2.176690466.62765546.1710869811-1212036775.1686138339",
+            j: "https://files.codingninjas.in/snare-28545.mp3?_ga=2.176690466.62765546.1710869811-1212036775.1686138339",
+            k: "", // Add the sound URL for the 'k' key
+            l: ""  // Add the sound URL for the 'l' key
+        };
+
+        // Add click event listeners to all drum buttons
+        const buttons = document.querySelectorAll('.drum');
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Get the data-key attribute value (key) of the clicked button
+                const key = this.getAttribute('data-key');
+
+                // Get the sound URL corresponding to the key
+                const soundUrl = sounds[key];
+
+                // If sound URL is available, create and play the audio
+                if (soundUrl) {
+                    const audio = new Audio(soundUrl);
+                    audio.play();
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

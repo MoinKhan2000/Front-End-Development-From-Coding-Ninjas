@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #04f2f2;
+            justify-content: baseline;
+            text-align: center;
+            padding-top: 1%;
+            margin: 0;
+        }
+
+        body {
+            background-color: #00ffff;
+            margin: 0px;
+        }
+
+        .blog-list {
+            list-style: none;
+            margin: 40;
+            padding: 40;
+            background-color: #f0f8ff;
+        }
+
+        .blog-post {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex: 9 1;
+        }
+
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .blog-buttons {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .blog-button {
+            background-color: antiquewhite;
+        }
+
+        .blog-button {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            /* box-shadow: rgba(44, 187, 99, .2) 0 -5px 8px -4px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+            /* padding: 7px 20p; */
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 15px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            margin: 2px;
+        }
+
+        .blog-button:hover {
+            box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        .blog-date {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .blog-box {
+            display: flex;
+            flex-direction: row;
+            flex-flow: wrap;
+
+        }
+
+        .blog-content {
+            margin: 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>My Blogs</h1>
+    </div>
+    <ul class="blog-list"></ul>
+    <script>
+        // Function to add a new blog post with move up, move down, and delete buttons
+        function addBlog(blog) {
+            const blogList = document.querySelector('.blog-list');
+
+            // Create blog post container
+            const newBox = document.createElement('div');
+            newBox.classList.add('blog-box');
+
+            // Create blog post element
+            const newBlogPost = document.createElement('div');
+            newBlogPost.classList.add('blog-post');
+            newBox.appendChild(newBlogPost);
+
+            // Create blog header
+            const newBlogHeader = document.createElement('div');
+            newBlogHeader.classList.add('blog-header');
+            newBlogPost.appendChild(newBlogHeader);
+
+            // Create blog title
+            const newBlogTitle = document.createElement('h2');
+            newBlogTitle.classList.add('blog-title');
+            newBlogTitle.textContent = blog.title;
+            newBlogHeader.appendChild(newBlogTitle);
+
+            // Create blog date
+            const newBlogDate = document.createElement('p');
+            newBlogDate.classList.add('blog-date');
+            newBlogDate.textContent = blog.date;
+            newBlogHeader.appendChild(newBlogDate);
+
+            // Create blog content
+            const newBlogContent = document.createElement('p');
+            newBlogContent.classList.add('blog-content');
+            newBlogContent.textContent = blog.content;
+            newBlogPost.appendChild(newBlogContent);
+
+            // Create and append move up button
+            const moveUpBtn = document.createElement("button");
+            moveUpBtn.classList.add("blog-button", "move-up");
+            moveUpBtn.textContent = "Move Up";
+
+            // Create and append move down button
+            const moveDownBtn = document.createElement("button");
+            moveDownBtn.classList.add("blog-button", "move-down");
+            moveDownBtn.textContent = "Move Down";
+
+            // Create and append delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("blog-button", "delete");
+            deleteBtn.textContent = "Delete";
+
+            // Create div for buttons
+            const blogButtonsDiv = document.createElement("div");
+            blogButtonsDiv.classList.add("blog-buttons");
+            blogButtonsDiv.appendChild(moveUpBtn);
+            blogButtonsDiv.appendChild(moveDownBtn);
+            blogButtonsDiv.appendChild(deleteBtn);
+
+            // Add event listeners to buttons
+            moveUpBtn.addEventListener("click", function () {
+                const currentBlog = blogButtonsDiv.parentElement;
+                const prevBlog = currentBlog.previousElementSibling;
+                if (prevBlog) {
+                    currentBlog.parentNode.insertBefore(currentBlog, prevBlog);
+                }
+            });
+
+            moveDownBtn.addEventListener("click", function () {
+                const currentBlog = blogButtonsDiv.parentElement;
+                const nextBlog = currentBlog.nextElementSibling;
+                if (nextBlog) {
+                    currentBlog.parentNode.insertBefore(nextBlog, currentBlog);
+                }
+            });
+
+            deleteBtn.addEventListener("click", function () {
+                const currentBlog = blogButtonsDiv.parentElement;
+                currentBlog.remove();
+            });
+
+            // Append buttons to blog post
+            newBox.appendChild(blogButtonsDiv);
+
+            // Append blog post to blog list
+            blogList.appendChild(newBox);
+        }
+
+        // Sample blog data
+        const blogData = [
+            {
+                title: 'First Blog Post',
+                date: 'January 1, 2022',
+                content: 'This is the content of the first blog post.'
+            },
+            {
+                title: 'Second Blog Post',
+                date: 'February 1, 2022',
+                content: 'This is the content of the second blog post.'
+            },
+            {
+                title: 'Third Blog Post',
+                date: 'March 1, 2022',
+                content: 'This is the content of the third blog post.'
+            }
+        ];
+
+        // Add each blog post to the page
+        blogData.forEach(blog => addBlog(blog));
+
+    </script>
+</body>
+
+</html>

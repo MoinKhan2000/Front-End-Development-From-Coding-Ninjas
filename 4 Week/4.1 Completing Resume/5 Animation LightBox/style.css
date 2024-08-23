@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    display: flex;
+    position: absolute;
+}
+
+#targetDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: linear-gradient(60deg, orange, white, green);
+    width: 200px;
+    min-height: 200px;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 1s all;
+}
+
+#targetDiv:target {
+    top: 200px;
+    left: 500px;
+    opacity: 1;
+    width: 200px;
+    min-height: 200px;
+}
+
+#targetDiv a:hover #targetDiv {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: 1s all;
+}

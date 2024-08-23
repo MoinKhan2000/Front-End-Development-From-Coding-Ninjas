@@ -1,0 +1,23 @@
+#div1 {
+    height: 40px;
+    width: 250px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    font-size: 30px;
+    border: solid black;
+    border-width: 3px 0px 3px 0px;
+    text-align: center;
+    animation: anim 1s ease-in-out infinite;
+    padding: 5px;
+}
+
+@keyframes anim {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

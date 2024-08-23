@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+    function getColorFromPosition(x, y) {
+        // Convert mouse position to RGB color values
+        const r = Math.floor((x / window.innerWidth) * 255);
+        const g = Math.floor((y / window.innerHeight) * 255);
+        const b = Math.floor(Math.abs((x - y) / (window.innerWidth + window.innerHeight)) * 255);
+
+        // Return RGB color string
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    document.addEventListener('mousemove', (e) => {
+        // Get mouse position relative to the body element
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Calculate the color based on mouse position
+        const red = posX % 256;  // Red component based on X position
+        const green = posY % 256;  // Green component based on Y position
+        const blue = (posX + posY) % 256;  // Blue component based on X and Y positions
+
+        // Construct CSS color string
+        const color = `rgb(${red}, ${green}, ${blue})`;
+
+        // Apply the color to the body background
+        document.body.style.backgroundColor = color;
+    });
+
+</script>
+
+</html>
